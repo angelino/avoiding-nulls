@@ -12,8 +12,8 @@ public class InMemoryUserService implements UserService {
 
     public InMemoryUserService() {
         // initial population
-        usersById.put(1L, new User(1L, "Arthur"));
-        usersById.put(2L, new User(2L, "Maicon"));
+//        usersById.put(1L, new User(1L, "Arthur"));
+//        usersById.put(2L, new User(2L, "Maicon"));
     }
 
     @Override
@@ -21,5 +21,13 @@ public class InMemoryUserService implements UserService {
         Long lookupId = Objects.requireNonNull(id, "id is required for lookup");
         User user = usersById.get(lookupId);
         return Optional.ofNullable(user);
+    }
+
+    @Override
+    public Iterable<User> findAllUsers() {
+        if (usersById.isEmpty()) {
+            return null;
+        }
+        return usersById.values();
     }
 }

@@ -13,5 +13,13 @@ public class Application {
         Optional<User> result = userService.findUserById(userId);
 
         result.ifPresent(user -> System.out.println(user.getName()));
+
+        //
+
+        Iterable<User> allUsers = userService.findAllUsers();
+
+        for (User u : allUsers) {
+            System.out.println(u);
+        }
     }
 }
