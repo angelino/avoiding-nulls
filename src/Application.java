@@ -8,13 +8,10 @@ public class Application {
     public static void main(String[] args) {
         UserService userService = new InMemoryUserService();
 
-        Long userId = 3L;
+        Long userId = 2L;
 
         Optional<User> result = userService.findUserById(userId);
 
-        if (result.isPresent()) {
-            User user = result.get();
-            System.out.println(user.getName());
-        }
+        result.ifPresent(user -> System.out.println(user.getName()));
     }
 }
