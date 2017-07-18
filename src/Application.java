@@ -9,6 +9,9 @@ public class Application {
         Long userId = 3L;
 
         User user = userService.findUserById(userId);
-        System.out.println(user.getName());
+
+        if (user != null) {
+            System.out.println(user.getName());
+        }
     }
 }
