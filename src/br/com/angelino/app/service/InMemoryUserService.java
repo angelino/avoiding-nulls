@@ -1,3 +1,7 @@
+package br.com.angelino.app.service;
+
+import br.com.angelino.app.model.User;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;

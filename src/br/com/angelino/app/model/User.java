@@ -1,3 +1,5 @@
+package br.com.angelino.app.model;
+
 /**
  * Created by las on 18/07/17.
  */

@@ -1,3 +1,9 @@
+package br.com.angelino.app;
+
+import br.com.angelino.app.model.User;
+import br.com.angelino.app.service.InMemoryUserService;
+import br.com.angelino.app.service.UserService;
+
 import java.util.Optional;
 
 /**
