@@ -9,27 +9,16 @@ public class Application {
         UserService userService = new InMemoryUserService();
 
         // Add new users
-
-        User huguinho = new User(1L, "Huguinho");
-        User zezinho = new User(2L, "Zezinho");
-        User luizinho = new User(3L, "Luizinho");
-
-        userService.saveUser(huguinho);
-        userService.saveUser(zezinho);
-        userService.saveUser(luizinho);
+        userService.saveUser(new User(1L, "Huguinho"));
+        userService.saveUser(new User(2L, "Zezinho"));
+        userService.saveUser(new User(3L, "Luizinho"));
 
         // Find user by id
-
-        Long userId = 2L;
-
-        Optional<User> result = userService.findUserById(userId);
-
+        Optional<User> result = userService.findUserById(2L);
         result.ifPresent(u -> System.out.println(u.getName()));
 
         // Show all users
-
         Iterable<User> allUsers = userService.findAllUsers();
-
         allUsers.forEach(System.out::println);
     }
 }
