@@ -18,10 +18,8 @@ public class Application {
 
         Iterable<User> allUsers = userService.findAllUsers();
 
-        if (allUsers != null) {
-            for (User u : allUsers) {
-                System.out.println(u);
-            }
+        for (User u : allUsers) {
+            System.out.println(u);
         }
     }
 }

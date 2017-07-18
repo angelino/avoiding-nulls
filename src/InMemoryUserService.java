@@ -25,9 +25,7 @@ public class InMemoryUserService implements UserService {
 
     @Override
     public Iterable<User> findAllUsers() {
-        if (usersById.isEmpty()) {
-            return null;
-        }
+        // By default, HashMap#values() return an empty collection if the map is empty
         return usersById.values();
     }
 }
