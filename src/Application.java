@@ -30,8 +30,6 @@ public class Application {
 
         Iterable<User> allUsers = userService.findAllUsers();
 
-        for (User u : allUsers) {
-            System.out.println(u);
-        }
+        allUsers.forEach(System.out::println);
     }
 }
