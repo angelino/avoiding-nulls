@@ -8,4 +8,6 @@ public interface UserService {
     Optional<User> findUserById(Long id);
 
     Iterable<User> findAllUsers();
+
+    void saveUser(User newUser);
 }

@@ -10,12 +10,6 @@ public class InMemoryUserService implements UserService {
 
     private static Map<Long, User> usersById = new HashMap<>();
 
-    public InMemoryUserService() {
-        // initial population
-//        usersById.put(1L, new User(1L, "Arthur"));
-//        usersById.put(2L, new User(2L, "Maicon"));
-    }
-
     @Override
     public Optional<User> findUserById(Long id) {
         Long lookupId = Objects.requireNonNull(id, "id is required for lookup");
@@ -27,5 +21,10 @@ public class InMemoryUserService implements UserService {
     public Iterable<User> findAllUsers() {
         // By default, HashMap#values() return an empty collection if the map is empty
         return usersById.values();
+    }
+
+    @Override
+    public void saveUser(User newUser) {
+        usersById.put(newUser.getId(), newUser);
     }
 }
