@@ -1,3 +1,5 @@
+import java.util.Optional;
+
 /**
  * Created by las on 18/07/17.
  */
@@ -8,9 +10,10 @@ public class Application {
 
         Long userId = 3L;
 
-        User user = userService.findUserById(userId);
+        Optional<User> result = userService.findUserById(userId);
 
-        if (user != null) {
+        if (result.isPresent()) {
+            User user = result.get();
             System.out.println(user.getName());
         }
     }
