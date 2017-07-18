@@ -10,9 +10,13 @@ public class Application {
 
         // Add new users
 
-        User user = new User(null, null);
+        User huguinho = new User(1L, "Huguinho");
+        User zezinho = new User(2L, "Zezinho");
+        User luizinho = new User(3L, "Luizinho");
 
-        userService.saveUser(user);
+        userService.saveUser(huguinho);
+        userService.saveUser(zezinho);
+        userService.saveUser(luizinho);
 
         // Find user by id
 
