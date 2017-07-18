@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created by las on 18/07/17.
@@ -16,6 +17,7 @@ public class InMemoryUserService implements UserService {
 
     @Override
     public User findUserById(Long id) {
-        return usersById.get(id);
+        Long lookupId = Objects.requireNonNull(id, "id is required for lookup");
+        return usersById.get(lookupId);
     }
 }
