@@ -25,6 +25,14 @@ public class InMemoryUserService implements UserService {
 
     @Override
     public void saveUser(User newUser) {
-        usersById.put(newUser.getId(), newUser);
+        User validUser = validateUser(newUser);
+        usersById.put(validUser.getId(), validUser);
+    }
+
+    private User validateUser(User newUser) {
+        User user = Objects.requireNonNull(newUser, "an user is required to save");
+        Objects.requireNonNull(user.getId(), "the user must have an id");
+        Objects.requireNonNull(user.getName(), "the user must have a name");
+        return user;
     }
 }
